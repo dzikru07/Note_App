@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutDialogContainer"
+    android:padding="@dimen/_10sdp"
+    android:orientation="vertical">
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:neumorph_shapeType="pressed"
+        app:neumorph_backgroundColor="@color/background"
+        app:neumorph_shadowColorDark="@color/dark_shadow"
+        app:neumorph_shadowColorLight="@color/light_shadow"
+        app:neumorph_shadowElevation="@dimen/_4sdp"
+        app:neumorph_shapeAppearance="@style/NeumorphismCard"
+        tools:ignore="MissingConstraints">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layoutDialog"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textTitle"
+                android:padding="10dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="My List Today"
+                android:textAlignment="center"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold"
+                android:textColor="#F19C9C"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <soup.neumorphism.NeumorphCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:neumorph_shapeType="flat"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                app:neumorph_backgroundColor="@color/white"
+                app:neumorph_shadowColorDark="@color/dark_shadow"
+                app:neumorph_shadowColorLight="@color/light_shadow"
+                app:neumorph_shadowElevation="@dimen/_4sdp"
+                app:neumorph_shapeAppearance="@style/NeumorphismCard"
+                tools:ignore="MissingConstraints">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100sdp"
+                    android:id="@+id/textMassage"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="40dp"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textTitle"/>
+
+            </soup.neumorphism.NeumorphCardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_weight="4"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:orientation="horizontal">
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_weight="2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:id="@+id/buttonNo"
+                    android:background="@drawable/botton_style"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Cancel"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/buttonYes"
+                    app:layout_constraintTop_toBottomOf="@id/layoutDialog" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_weight="2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:id="@+id/buttonYes"
+                    android:fontFamily="@font/roboto_regular"
+                    android:background="@drawable/botton_style_yes"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="40dp"
+                    android:text="ADD"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/buttonNo"
+                    app:layout_constraintTop_toBottomOf="@id/layoutDialog" />
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
